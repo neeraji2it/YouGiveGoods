@@ -18,6 +18,7 @@ class Admin::DashboardsController < ApplicationController
      @user.update_attributes(:confirmation_token => nil,:confirmed_at => Time.now)
      @user.send_reset_password_instructions
       redirect_to users_path
+      flash[:notice] = "User was successfully created."
     else
       render :action => "new"
     end
