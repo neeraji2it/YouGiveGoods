@@ -98,6 +98,7 @@ GEM
       mime-types
     paperclip-ffmpeg (1.0.1)
       paperclip (>= 2.5.2)
+    pg (0.17.1)
     polyglot (0.3.4)
     rack (1.5.2)
     rack-test (0.6.2)
@@ -171,6 +172,7 @@ DEPENDENCIES
   omniauth-google-oauth2
   paperclip (~> 4.1)
   paperclip-ffmpeg
+  pg
   rails (= 4.0.1)
   sass-rails (~> 4.0.0)
   sdoc
