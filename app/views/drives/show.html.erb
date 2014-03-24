@@ -1,0 +1,21 @@
+<h4>Summary of Drive</h4>
+
+<p>Drive Type: <%= @drive.drive_type %></p>
+
+<p>Drive Description:</p>
+<p><%= @drive.drive_type %></p>
+
+<p>Drive Goal:<%= @drive.goal %></p>
+
+<p>Start Date: <% if @drive.start_date.present? %><%= @drive.start_date.to_date %><% end %> </p>
+
+<p>End Date: <% if @drive.end_date.present? %><%= @drive.end_date.to_date %><% end %> </p>
+
+<p>Drive Logo: </p>
+<p><%= image_tag(@drive.logo.url(:medium)) %></p>
+
+<p>Drive Photo: </p>
+<p><%= image_tag(@drive.image.url(:medium)) %></p>
+
+
+<p><%= link_to "Back", drives_path %></p>

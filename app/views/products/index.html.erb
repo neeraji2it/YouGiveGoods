@@ -1,0 +1,38 @@
+<table class="table table-bordered table-condensed">
+  <tr>
+    <td colspan="12">
+      <span style="float:right;"><%= link_to "Add New", new_product_path, :class=> "btn btn-small btn-info" %></span>
+    </td>
+  </tr>
+  
+  <tr>
+    <th>Type</th>
+    <th>Status</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Base Unit</th>
+    <th>Attributes</th>
+    <th>Image url</th>
+    <th>Categories</th>
+    <th>Cost</th>
+    <th>Pounds</th>
+    <th>Action</th>
+  </tr>
+  
+  <% @products.each do |product| %>
+  <tr>
+    <td><%= product.product_type %></td>
+    <td><%= product.status %></td>
+    <td><%= product.name %></td>
+    <td><%= product.description %></td>
+    <td><%= product.base_unit %></td>
+    <td><%= product.product_attributes %></td>
+    <td><%= product.image_url %></td>
+    <td><%= product.categories %></td>
+    <td><%= product.cost %></td>
+    <td><%= product.pounds %></td>
+    <td><%= link_to "Edit",edit_product_path(product), :class => "btn btn-mini btn-info" %>|
+    <%= link_to "Delete",product, :data => {:confirm => "Are you sure?"}, :method => "delete", :class=>"btn btn-mini btn-danger" %></td>
+  </tr>
+  <% end %>
+</table>

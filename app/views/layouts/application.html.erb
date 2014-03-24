@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>YouGiveGoods</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application","bootstrap-datetimepicker.min", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <div class="nav-collapse">
+            <% if user_signed_in? %>
+            <ul class="nav pull-right">
+              <li><%= link_to "Logout", destroy_user_session_path, :method => "delete" %></li>
+            </ul>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <div class="container" style="padding-bottom:50px;width:1000px;">
+    <% if notice %>
+      <div class="alert alert-info">
+        <a class="close" data-dismiss="alert">×</a>
+        <strong><%= notice %></strong>
+      </div>
+    <% end %>
+    <% if alert %>
+      <div class="alert alert-error">
+        <a class="close" data-dismiss="alert">×</a>
+        <strong><%= alert %></strong>
+      </div>
+    <% end %>
+
+    <%= yield %>
+    </div>
+  </body>
+</html>

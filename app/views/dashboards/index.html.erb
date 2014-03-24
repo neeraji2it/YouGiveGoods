@@ -1,0 +1,64 @@
+<h2>Drives</h2>
+<table class="table table-bordered table-striped">
+  <tr>
+    <th>Drive Type</th>
+    <th>Status</th>
+    <th>Name</th>
+    <th>Organization</th>
+    <th>NPO Name</th>
+    <th>Drive url</th>
+    <th>Description</th>
+    <th>Goods Type</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Goal</th>
+  </tr>
+  
+  <% @drives.each do |drive| %>
+  <tr>
+    <td><%= drive.drive_type %></td>
+    <td><%= drive.status %></td>
+    <td><%= drive.name %></td>
+    <td><%= drive.organization %></td>
+    <td><%= drive.npo_name %></td>
+    <td><%= drive.drive_url %></td>
+    <td><%= drive.description %></td>
+    <td><%= drive.goods_type %></td>
+    <td><%= drive.start_date %></td>
+    <td><%= drive.end_date %></td>
+    <td><%= drive.goal %></td>
+  </tr>
+  <% end %>
+</table>
+
+
+<h2>Campaigns</h2>
+<table class="table table-bordered table-striped">
+  <tr>
+    <th>Campaign Type</th>
+    <th>Status</th>
+    <th>Name</th>
+    <th>Organization</th>
+    <th>NPO Name</th>
+    <th>Campaign url</th>
+    <th>Description</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Goal</th>
+  </tr>
+  
+  <% @campaigns.each do |camp| %>
+  <tr>
+    <td><%= camp.campaign_type %></td>
+    <td><%= camp.status %></td>
+    <td><%= camp.name %></td>
+    <td><%= camp.organization %></td>
+    <td><%= camp.npo_name %></td>
+    <td><%= camp.campaign_url %></td>
+    <td><%= camp.description %></td>
+    <td><%= camp.start_date %></td>
+    <td><%= camp.end_date %></td>
+    <td><%= camp.goal %></td>
+  </tr>
+  <% end %>
+</table>

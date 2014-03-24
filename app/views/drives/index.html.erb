@@ -1,0 +1,37 @@
+<table class="table table-bordered table-striped">
+  <tr>
+    <td colspan="12"><span style="float:right;"><%= link_to "Add New",new_drife_path, :class => "btn btn-small btn-info" %></span></td>
+  </tr>
+  <tr>
+    <th>Drive Type</th>
+    <th>Status</th>
+    <th>Name</th>
+    <th>Organization</th>
+    <th>NPO Name</th>
+    <th>Drive url</th>
+    <th>Description</th>
+    <th>Goods Type</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+    <th>Goal</th>
+    <th>Action</th>
+  </tr>
+
+  <% @drives.each do |drive| %>
+    <tr>
+      <td><%= drive.drive_type %></td>
+      <td><%= drive.status %></td>
+      <td><%= drive.name %></td>
+      <td><%= drive.organization %></td>
+      <td><%= drive.npo_name %></td>
+      <td><%= drive.drive_url %></td>
+      <td><%= drive.description %></td>
+      <td><%= drive.goods_type %></td>
+      <td><%= drive.start_date %></td>
+      <td><%= drive.end_date %></td>
+      <td><%= drive.goal %></td>
+      <td><%= link_to "Edit", edit_drife_path(drive), :class => "btn btn-mini btn-info" %>|
+        <%= link_to "Delete", drive, :data => {:confirm => "Are You Sure?"},:method => :delete, :class => "btn btn-mini btn-danger" %></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,129 @@
+<%= form_for @drive do |f| %>
+  <% if @drive.errors.any? %>
+    <div id ="error_explanation">
+      <h2><%= pluralize(@drive.errors.count, "error") %> prohibited this drive from being saved.</h2>
+      <ul>
+        <% @drive.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <table>
+    <tr><td colspan="5"><h4>Enter the basic details of your drive</h4></td></tr>
+    
+    <tr><td>Organization</td><td><%= f.text_field :organization %></td></tr>
+
+    <tr><td>Non-Profit Organization benefitting from the Drive</td>
+      <td><%= f.text_field :npo_name %></td></tr>
+
+    <tr><td>&nbsp;</td></tr>
+
+    <tr><td>Are you starting the drive on<br/> behalf of an organization?</td>
+      <td><%= f.text_field :on_behalfof %></td>
+    </tr>
+
+    <tr><td>&nbsp;</td></tr>
+
+    <tr>
+      <td>Drive Name</td>
+      <td><%= f.text_field :name %></td>
+    </tr>
+
+    <tr><td>&nbsp;</td></tr>
+
+    <tr><td><h4>Choose the type of drive you want to run</h4></td></tr>
+
+    <tr>
+      <td>Drive Type</td>
+      <td><%= f.select :drive_type, options_for_select([["Food Drive"],["Animal Shelter Drive"],["Shelter Drive"]]) %></td>
+    </tr>
+
+    <tr><td>&nbsp;</td></tr>
+
+    <tr><td><h4>Add descriptive information for your drive</h4></td></tr>
+    <tr>
+      <td>Drive Description</td>
+      <td><%= f.text_area :description %></td>
+    </tr>
+
+    <tr><td>&nbsp;</td></tr>
+
+    <tr>
+      <td>Drive Goal</td>
+      <td><%= f.text_field :goal %></td>
+    </tr>
+
+    <tr><td>&nbsp;</td></tr>
+
+    <tr><td>Drive Logo</td>
+      <td><%= f.file_field :logo %></td>
+    </tr>
+
+    <tr><td>&nbsp;</td></tr>
+
+    <tr><td>Drive Photo</td>
+      <td><%= f.file_field :image %></td>
+    </tr>
+    
+     <tr><td>&nbsp;</td></tr>
+
+    <tr><td><h4>Pick the start and end dates for your drive</h4></td></tr>
+
+    <tr>
+      <td>Start Date</td>
+      <td><div id="datetimepicker1" class="input-append date">
+          <%= f.text_field :start_date, "data-format"=>"dd/MM/yyyy hh:mm:ss" %>
+          <span class="add-on">
+            <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+            </i>
+          </span>
+        </div> </td>
+    </tr>
+
+    <tr>
+      <td>End Date</td>
+      <td><div id="datetimepicker2" class="input-append date">
+
+          <%= f.text_field :end_date, "data-format"=>"dd/MM/yyyy hh:mm:ss" %>
+          <span class="add-on">
+            <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+            </i>
+          </span>
+        </div></td>
+    </tr>
+
+    <tr><td>&nbsp;</td></tr>
+    
+    
+    <tr><td><h4>Other Information</h4></td></tr>
+    
+    <tr><td>Goods Type</td>
+      <td><%= f.text_field :goods_type %></td></tr>
+    
+    <tr><td>&nbsp;</td></tr>
+    
+    <tr><td>Drive url</td>
+      <td><%= f.text_field :drive_url %></td></tr>
+    
+    <tr><td>&nbsp;</td></tr>
+
+    <tr><td clospan="2"><%= f.submit :save, :class=> "btn btn-success" %></td></tr>
+  </table>
+
+<% end %>
+
+<script>
+  $(function() {
+    $('#datetimepicker1').datetimepicker({
+      language: 'en'
+    });
+  });
+
+  $(function() {
+    $('#datetimepicker2').datetimepicker({
+      language: 'en'
+    });
+  });
+</script>

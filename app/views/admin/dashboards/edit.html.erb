@@ -1,0 +1,36 @@
+<%= form_for @user, :url => "/admin/dashboards/#{params[:id]}", :method => "PUT" do |f| %>
+<% if @user.errors.any? %>
+<div id ="error_explanation">
+  <h2><%= pluralize(@user.errors.count,"error") %> prohibited this user from being saved.</h2>
+  <ul><% @user.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+
+<div class="field">
+  <%= f.label :first_name, "First Name" %>
+  <%= f.text_field :first_name %>
+</div>
+
+<div class="field">
+  <%= f.label :last_name, "Last Name" %>
+  <%= f.text_field :last_name %>
+</div>
+
+<div class="field">
+  <%= f.label :user_type ,"Type" %>
+  <%= f.text_field :user_type %>
+</div>
+
+<div class="field">
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+</div>
+
+
+<div class="action">
+  <%= f.submit :save %>
+</div>
+<% end %>

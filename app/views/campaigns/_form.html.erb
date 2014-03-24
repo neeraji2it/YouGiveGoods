@@ -1,0 +1,114 @@
+<%= form_for @campaign do |f| %>
+  <% if @campaign.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@campaign.errors.count, "error") %>prohibited this campaign from being saved.</h2>
+      <ul>
+        <% @campaign.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+   <table>
+    <tr><td colspan="5"><h4>Enter the basic details of your campaign</h4></td></tr>
+
+    <tr><td>&nbsp;</td></tr>
+    
+    <tr><td>Organization</td>
+      <td><%= f.text_field :organization %></td></tr>
+    
+    <tr>
+      <td>Campaign Name</td>
+      <td><%= f.text_field :name %></td>
+    </tr>
+    
+    <tr><td>&nbsp;</td></tr>
+    <tr>
+      <td>Non-Profit Organization</td>
+      <td><%= f.text_field :npo_name %></td>
+    </tr>
+    
+     <tr><td>&nbsp;</td></tr>
+    <tr>
+      <td>Campaign Type</td>
+      <td><%= f.select :campaign_type, options_for_select([["contest"],["supercontest,"],["subcontest"],["campaign"],["super campaign"],["subcampaign"]]) %></td>
+    </tr>
+    
+    <tr><td>&nbsp;</td></tr>
+    
+    
+    <tr>
+      <td>Campaign Description</td>
+      <td><%= f.text_area :description %></td>
+    </tr>
+    
+    <tr><td>&nbsp;</td></tr>
+    
+    <tr>
+      <td>Campaign Goal</td>
+      <td><%= f.text_field :goal %></td>
+    </tr>
+    
+    <tr><td>&nbsp;</td></tr>
+    
+    <tr><td>Campaign Logo</td>
+      <td><%= f.file_field :logo %></td>
+    </tr>
+    
+    <tr><td>&nbsp;</td></tr>
+    
+    <tr><td>Campaign Photo</td>
+    <td><%= f.file_field :image %></td>
+    </tr>
+    
+    <tr><td><h4>Pick the start and end dates for your drive</h4></td></tr>
+    
+    <tr>
+      <td>Start Date</td>
+      <td><div id="datetimepicker1" class="input-append date">
+      <%= f.text_field :start_date, "data-format"=>"dd/MM/yyyy hh:mm:ss" %>
+      <span class="add-on">
+        <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+        </i>
+      </span>
+    </div> </td>
+    </tr>
+    
+    <tr>
+      <td>End Date</td>
+      <td><div id="datetimepicker2" class="input-append date">
+      
+      <%= f.text_field :end_date, "data-format"=>"dd/MM/yyyy hh:mm:ss" %>
+      <span class="add-on">
+        <i data-time-icon="icon-time" data-date-icon="icon-calendar">
+        </i>
+      </span>
+    </div></td>
+    </tr>
+    
+    <tr><td>&nbsp;</td></tr>
+    
+    <tr><td>Campaign url</td>
+      <td><%= f.text_field :campaign_url %></td></tr>
+    
+     <tr><td>&nbsp;</td></tr>
+    
+    <tr><td><%= f.submit :save, :class=> "btn btn-success" %></td></tr>
+  </table>
+
+<% end %>
+
+<script>
+   $(function() {
+    $('#datetimepicker1').datetimepicker({
+       language: 'en'
+    });
+  });
+  
+  $(function() {
+    $('#datetimepicker2').datetimepicker({
+       language: 'en'
+    });
+  });
+</script>
