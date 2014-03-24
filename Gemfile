@@ -56,3 +56,5 @@ gem 'omniauth-google-oauth2'
 
 gem "paperclip", "~> 4.1"
 gem "paperclip-ffmpeg"
+
+gem "rails_12factor"
