@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>YouGiveGoods  Admin</title>
+    <title>Amp Your Good</title>
     <%= stylesheet_link_tag    "admin","bootstrap.css", media: "all", "data-turbolinks-track" => true %>
     <%= stylesheet_link_tag "bootstrap.min.css","bootstrap-datetimepicker.min" %>
     <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
@@ -11,9 +11,16 @@
   <body>
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
-        <div class="container">
+        <div class="container" style="width:1000px;">
           <div class="nav-collapse">
             <% if admin_signed_in? %>
+              <ul class="nav pull-left">
+                <li><%= link_to "Home", admin_dashboards_path %></li>
+                <li><%= link_to "Users", users_path %></li>
+                <li><%= link_to "Drives", drives_path %></li>
+                <li><%= link_to "Campaigns", campaigns_path %></li>
+                <li><%= link_to "Products",products_path %></li>
+              </ul>
               <ul class="nav pull-right">
                 <li>
                   <%= link_to "Logout", destroy_admin_session_path, :method => "DELETE" %>
@@ -27,18 +34,6 @@
     <br/>
     <br/>
     <br/>
-    <div class="bs-sidebar affix" style="margin-left: 50px;">
-      <% if admin_signed_in? %>
-      <ul class="nav bs-sidenav">
-        <li><%= link_to "Home", admin_dashboards_path %></li><br/>
-        <li><%= link_to "User", users_path %></li><br/>
-        <li><%= link_to "Drive", drives_path %></li><br/>
-        <li><%= link_to "Campaign", campaigns_path %></li><br/>
-        <li><%= link_to "Products",products_path %></li><br/>
-        <li><%= link_to "Reports" %></li>
-      </ul>
-      <% end %>
-    </div>
 
     <div class="container" style="padding-bottom:50px;width:1000px;">
       <% if notice %>

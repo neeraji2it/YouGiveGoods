@@ -21,7 +21,7 @@
 
 <div class="field">
   <%= f.label :user_type ,"Type" %>
-  <%= f.text_field :user_type %>
+  <%= f.select :user_type, options_for_select([["Donor"],["Organizer"]]) %>
 </div>
 
 <div class="field">
@@ -29,6 +29,10 @@
   <%= f.email_field :email %>
 </div>
 
+<div class="field">
+  <%= f.label :status %>
+  <%= f.select :status, options_for_select([["Active"],["Inactive"]]) %>
+</div>
 
 <div class="action">
   <%= f.submit :save %>

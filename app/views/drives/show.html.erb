@@ -16,6 +16,17 @@
 
 <p>Drive Photo: </p>
 <p><%= image_tag(@drive.image.url(:medium)) %></p>
-
+<a
+  href="<%= @drive.image.url %>"
+  style="display:block; height: 453px;width: 763px;z-index: 100px;"
+  id="player">
+</a>
+<script type="text/javascript">
+  flowplayer("player", {src: "/assets/flowplayer/flowplayer-3.2.6.swf", wmode: "transparent"},
+  {clip: {
+      autoPlay: false,
+      autoBuffering: true
+    }});
+</script>
 
 <p><%= link_to "Back", drives_path %></p>

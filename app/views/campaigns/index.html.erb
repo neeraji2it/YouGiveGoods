@@ -27,7 +27,7 @@
     <td><%= camp.description %></td>
     <td><%= camp.start_date %></td>
     <td><%= camp.end_date %></td>
-    <td><%= camp.goal %></td>
+    <td>$<%= camp.goal %></td>
     <td><%= link_to "Edit", edit_campaign_path(camp), :class => "btn btn-mini btn-info" %>|
         <%= link_to "Delete", camp, :data => {:confirm => "Are You Sure?"},:method => :delete, :class => "btn btn-mini btn-danger" %></td>
   </tr>

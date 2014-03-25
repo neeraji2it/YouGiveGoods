@@ -29,8 +29,8 @@
     <td><%= product.product_attributes %></td>
     <td><%= product.image_url %></td>
     <td><%= product.categories %></td>
-    <td><%= product.cost %></td>
-    <td><%= product.pounds %></td>
+    <td>$<%= product.cost %></td>
+    <td>$<%= product.pounds %></td>
     <td><%= link_to "Edit",edit_product_path(product), :class => "btn btn-mini btn-info" %>|
     <%= link_to "Delete",product, :data => {:confirm => "Are you sure?"}, :method => "delete", :class=>"btn btn-mini btn-danger" %></td>
   </tr>

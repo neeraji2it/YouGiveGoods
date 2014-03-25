@@ -12,7 +12,7 @@
 
   <table>
     <tr><td colspan="5"><h4>Enter the basic details of your drive</h4></td></tr>
-    
+
     <tr><td>Organization</td><td><%= f.text_field :organization %></td></tr>
 
     <tr><td>Non-Profit Organization benefitting from the Drive</td>
@@ -51,8 +51,8 @@
     <tr><td>&nbsp;</td></tr>
 
     <tr>
-      <td>Drive Goal</td>
-      <td><%= f.text_field :goal %></td>
+      <td>DriveGoalUnit</td>
+      <td><span style="margin-right: 10px;">$</span><%= f.text_field :goal %></td>
     </tr>
 
     <tr><td>&nbsp;</td></tr>
@@ -66,14 +66,19 @@
     <tr><td>Drive Photo</td>
       <td><%= f.file_field :image %></td>
     </tr>
-    
-     <tr><td>&nbsp;</td></tr>
+
+    <tr><td>&nbsp;</td></tr>
 
     <tr><td><h4>Pick the start and end dates for your drive</h4></td></tr>
 
     <tr>
       <td>Start Date</td>
       <td><div id="datetimepicker1" class="input-append date">
+          <style>
+            .btn{
+              padding :0;
+            }
+          </style>
           <%= f.text_field :start_date, "data-format"=>"dd/MM/yyyy hh:mm:ss" %>
           <span class="add-on">
             <i data-time-icon="icon-time" data-date-icon="icon-calendar">
@@ -85,6 +90,11 @@
     <tr>
       <td>End Date</td>
       <td><div id="datetimepicker2" class="input-append date">
+          <style>
+            .btn{
+              padding :0;
+            }
+          </style>
 
           <%= f.text_field :end_date, "data-format"=>"dd/MM/yyyy hh:mm:ss" %>
           <span class="add-on">
@@ -95,21 +105,21 @@
     </tr>
 
     <tr><td>&nbsp;</td></tr>
-    
-    
+
+
     <tr><td><h4>Other Information</h4></td></tr>
-    
+
     <tr><td>Goods Type</td>
       <td><%= f.text_field :goods_type %></td></tr>
-    
-    <tr><td>&nbsp;</td></tr>
-    
-    <tr><td>Drive url</td>
-      <td><%= f.text_field :drive_url %></td></tr>
-    
+
     <tr><td>&nbsp;</td></tr>
 
-    <tr><td clospan="2"><%= f.submit :save, :class=> "btn btn-success" %></td></tr>
+    <tr><td>Drive url</td>
+      <td><%= f.text_field :drive_url %></td></tr>
+
+    <tr><td>&nbsp;</td></tr>
+
+    <tr><td clospan="2"><%= f.submit :save, :class=> "btn btn-success" ,:style => "width:300px;height:50px;"%></td></tr>
   </table>
 
 <% end %>
